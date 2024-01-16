@@ -2,16 +2,22 @@
 //
 // No hints this time! ;)
 
-// I AM NOT DONE
-
 #[derive(Debug)]
 enum Message {
-    // TODO: define a few types of messages as used below
+    Quit,
+    Echo(i32),
+    Move,
+    ChangeColor(ColorTupleStruct),
 }
 
+#[derive(Debug)]
+struct ColorTupleStruct(u8, u8, u8);
+
 fn main() {
+    let green = ColorTupleStruct(0, 255, 0);
+
     println!("{:?}", Message::Quit);
-    println!("{:?}", Message::Echo);
+    println!("{:?}", Message::Echo(42));
     println!("{:?}", Message::Move);
-    println!("{:?}", Message::ChangeColor);
+    println!("{:?}", Message::ChangeColor(green));
 }
