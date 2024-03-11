@@ -19,11 +19,13 @@ fn vec_loop(mut v: Vec<i32>) -> Vec<i32> {
 }
 
 fn vec_map(v: &Vec<i32>) -> Vec<i32> {
-    v.iter().map(|element| {
-        // TODO: Do the same thing as above - but instead of mutating the
-        // Vec, you can just return the new number!
-        2 * element
-    }).collect()
+    v.iter()
+        .map(|element| {
+            // TODO: Do the same thing as above - but instead of mutating the
+            // Vec, you can just return the new number!
+            2 * element
+        })
+        .collect()
 }
 
 #[cfg(test)]

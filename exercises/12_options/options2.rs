@@ -32,7 +32,10 @@ mod tests {
         // while let and if let.
         while let Some(optional_integer) = optional_integers.pop() {
             match optional_integer {
-                Some(integer) => {assert_eq!(integer, cursor); cursor -= 1;},
+                Some(integer) => {
+                    assert_eq!(integer, cursor);
+                    cursor -= 1;
+                }
                 None => break,
             }
         }

@@ -1,8 +1,7 @@
 // clippy3.rs
-// 
+//
 // Here's a couple more easy Clippy fixes, so you can see its utility.
 // No hints.
-
 
 #[allow(unused_variables, unused_assignments)]
 fn main() {
@@ -10,10 +9,7 @@ fn main() {
     // Not sure what it's supposed to do
     if let Some(some_variable) = my_option {}
 
-    let my_arr = &[
-        -1, -2, -3,
-        -4, -5, -6,
-    ];
+    let my_arr = &[-1, -2, -3, -4, -5, -6];
     println!("My array! Here it is: {:?}", my_arr);
 
     let mut my_empty_vec = vec![1, 2, 3, 4, 5];

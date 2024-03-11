@@ -18,7 +18,7 @@ impl AppendBar for Vec<String> {
         let mut vec = self;
         let bar = &mut vec![String::from("Bar")];
         vec.append(bar);
-        return vec
+        return vec;
     }
 }
 

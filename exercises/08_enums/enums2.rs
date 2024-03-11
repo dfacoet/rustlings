@@ -5,10 +5,10 @@
 
 #[derive(Debug)]
 enum Message {
-    Move {x: i128, y: i128},
+    Move { x: i128, y: i128 },
     Echo(String),
     ChangeColor(u8, u8, u8),
-    Quit
+    Quit,
 }
 
 impl Message {

@@ -50,7 +50,9 @@ enum ParsePersonError {
 impl FromStr for Person {
     type Err = ParsePersonError;
     fn from_str(s: &str) -> Result<Person, Self::Err> {
-        if s.len() == 0 {return Result::Err(ParsePersonError::Empty)};
+        if s.len() == 0 {
+            return Result::Err(ParsePersonError::Empty);
+        };
         match s.split(",").collect::<Vec<&str>>()[..] {
             [name, age_str] => {
                 if name.len() == 0 {
@@ -58,12 +60,12 @@ impl FromStr for Person {
                 } else {
                     let name = String::from(name);
                     match age_str.parse::<usize>() {
-                        Ok(age) => {Ok(Person{name, age})}
-                        Err(ParseError) => Err(ParsePersonError::ParseInt(ParseError))
+                        Ok(age) => Ok(Person { name, age }),
+                        Err(ParseError) => Err(ParsePersonError::ParseInt(ParseError)),
                     }
                 }
             }
-            _ => Result::Err(ParsePersonError::BadLen)
+            _ => Result::Err(ParsePersonError::BadLen),
         }
     }
 }

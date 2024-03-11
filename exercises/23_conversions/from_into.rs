@@ -43,16 +43,18 @@ impl Default for Person {
 impl From<&str> for Person {
     fn from(s: &str) -> Person {
         match s.split(",").collect::<Vec<&str>>()[..] {
-            [name, age_str] | [name, age_str, _]  => {
-                if name.len() == 0 {return Person::default()}
+            [name, age_str] | [name, age_str, _] => {
+                if name.len() == 0 {
+                    return Person::default();
+                }
                 let name = String::from(name);
 
                 match age_str.parse::<usize>() {
-                    Ok(age) => {Person{name, age}}
-                    Err(_) => Person::default()
+                    Ok(age) => Person { name, age },
+                    Err(_) => Person::default(),
                 }
             }
-            _ => Person::default()
+            _ => Person::default(),
         }
     }
 }
